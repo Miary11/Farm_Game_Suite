@@ -138,6 +138,13 @@ create or replace view ParcelleCulturePossibleDetails as (select idParcelle,Type
 	join TypeCulture on ParcelleCulturePossible.idTypeCulture = TypeCulture.idTypeCulture
 );
 
+create or replace view UserCultureParcellePossible as (select idParcelle,culture,AllUtilisateurCulture.nom,idUtilisateur,idCulture
+	from ParcelleCulturePossibleDetails 
+	join AllUtilisateurCulture on AllUtilisateurCulture.type = ParcelleCulturePossibleDetails.culture
+);
+
+select * from UserCultureParcellePossible where idParcelle = 'P4' and idUtilisateur = 'USER012';
+
 CREATE TABLE ParcelleCulture(
 	idParcelle varchar(30),
 	idCulture varchar(30),
@@ -157,6 +164,15 @@ create or replace view HistoriqueCulture as (select terrain,ParcelleCulture.idPa
 create or replace view HistoriqueCultureProprietaire as (select terrain,idparcelle,culture,quantite,coutRevient,dateCulture,proprietaire
 	from HistoriqueCulture
 	join Terrain on HistoriqueCulture.terrain = Terrain.idTerrain
+);
+
+create or replace view ParcelleCultureDetails as (select terrain,ParcelleCulture.idParcelle,Culture.nom as culture,TypeCulture.nom as type,quantite,dateCulture,Utilisateur.nom as proprietaire
+	from ParcelleCulture
+	join Culture on ParcelleCulture.idCulture = Culture.idCulture
+	join Parcelle on ParcelleCulture.idParcelle = Parcelle.idParcelle
+	join Terrain on Parcelle.terrain = Terrain.idTerrain
+	join Utilisateur on Terrain.proprietaire = Utilisateur.idUtilisateur
+	join TypeCulture on Culture.type = TypeCulture.idTypeCulture
 );
 
 select sum(quantite) from HistoriqueCultureProprietaire WHERE proprietaire = 'USER011';
@@ -190,10 +206,25 @@ SELECT AVG(nbParcelle) as nbMoyen FROM (SELECT COUNT(idParcelle) as nbParcelle F
 
 select sum(quantite) from SimulationCultureProprietaire WHERE proprietaire = 'USER011';
 
--- À faire en MongoDB
+CREATE SEQUENCE portefeuilleSeq START WITH 1 INCREMENT BY 1 CACHE 1 NO CYCLE;
 
--- CREATE TABLE Discussion(
--- 	envoyeur varchar(30),
--- 	receveur varchar(30),
--- 	message varchar(800),
--- );
+CREATE TABLE Portefeuille(
+	idPortefeuille varchar(30) PRIMARY KEY,
+	idUtilisateur varchar(30),
+	foreign key (idUtilisateur) references Utilisateur(idUtilisateur)
+);
+
+CREATE TABLE PortefeuilleActivite(
+	idPortefeuille varchar(30),
+	activite numeric,
+	foreign key (idPortefeuille) references Portefeuille(idPortefeuille)
+);
+
+create or replace view PortefeuilleUser as (select PortefeuilleActivite.idPortefeuille,idUtilisateur,sum(activite)
+	from PortefeuilleActivite
+	join Portefeuille on PortefeuilleActivite.idPortefeuille = Portefeuille.idPortefeuille
+	group by PortefeuilleActivite.idPortefeuille,idUtilisateur
+);
+
+insert into Portefeuille values ('PO' || nextval('portefeuilleSeq'),'USER07');
+insert into PortefeuilleActivite values ('PO1',0);

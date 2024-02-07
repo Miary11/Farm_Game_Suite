@@ -9,12 +9,13 @@ import Card from '../components/Card';
 import CardDetails from '../components/CardDetails';
 import SmallSideContainer from '../components/SmallSideContainer';
 import ProfilFiche from '../components/ProfilFiche';
-import {getUserTerrain,getUserCulture,deconnexion} from '../assets/js/Function';
+import {getUserPortefeuille,getUserTerrain,getUserCulture,deconnexion} from '../assets/js/Function';
 
 const FicheProfil = () => {
     const [userData, setUserData] = useState(null);
     const [cultureData, setCultureData] = useState(null);
     const [terrainData, setTerrainData] = useState(null);
+    const [portefeuilleData, setPortefeuilleData] = useState(null);
 
     useEffect(() => {
         document.title = 'Ma fiche';
@@ -28,6 +29,8 @@ const FicheProfil = () => {
                 setCultureData(userCultureData);
                 const userTerrainData = await getUserTerrain(parsedUserData[0].id);
                 setTerrainData(userTerrainData);
+                const userPortefeuilleData = await getUserPortefeuille(parsedUserData[0].id);
+                setPortefeuilleData(userPortefeuilleData);
             } catch (error) {
                 console.error('Error fetching user culture:', error);
             }
@@ -38,19 +41,19 @@ const FicheProfil = () => {
 
     // console.log('User Data:', userData);
 
-    if (!userData) {
-        return null;
+    if (!userData || !portefeuilleData) {
+        return null; 
     }
 
     return (
         <div className='page'>
-            <HeaderProfil link='/accueilBack' logo = "/assets/img/PNG/Logo.png" description = "Logo" icon = 'fas fa-user-circle' pseudo = {userData[0].pseudo} lien1 = '/ficheProfil' text1 = 'Voir ma fiche' lien2 = {deconnexion} text2 = 'Se déconnecter'/>
+            <HeaderProfil link='/accueilFront' logo = "/assets/img/PNG/Logo.png" description = "Logo" icon = 'fas fa-user-circle' pseudo = {userData[0].pseudo} lien1 = '/ficheProfil' text1 = 'Voir ma fiche' lien2 = {deconnexion} text2 = 'Se déconnecter'/>
             <main className='formInsClass'>
                 <section className='FormLeft'>
                     <h1>Fiche profil</h1>
                     <p className='desc2'>Voici les informations importantes sur votre profil.</p>
                     <section className='fiche'>
-                        <ProfilFiche icon = 'fas fa-user-circle' pseudo = {userData[0].pseudo} text = 'Portefeuille : Lorem Ar'/>
+                        <ProfilFiche icon = 'fas fa-user-circle' pseudo = {userData[0].pseudo} text = {`Portefeuille: ${portefeuilleData[0].portefeuille} Ar`}/>
                     </section>
                 </section>
                 <section className='SideLeft' id='profilLeft'>

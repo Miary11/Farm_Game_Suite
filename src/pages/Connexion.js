@@ -28,7 +28,7 @@ const Connexion = () => {
     }, []);
     return (
         <div className='page'>
-            <HeaderSub logo = "/assets/img/PNG/Logo.png" description = "Logo"/>
+            <a href='/'><HeaderSub logo = "/assets/img/PNG/Logo.png" description = "Logo"/></a>
             <main className='formClass'>
                 <section className='left'>
                     <h1>Se Connecter</h1>

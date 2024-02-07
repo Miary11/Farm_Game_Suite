@@ -793,3 +793,363 @@ body button:hover{
     color: #00641B;
     transition: 0.3s;
 }
+
+.header3{
+    height: 160px;
+    /* border-bottom: 1px solid white; */
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+.header3 .RightTop button{
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 8px 8px 8px 8px;
+    width: 120px;
+    border-radius: 32px;
+    height: 40px;
+    margin-top: 6%;
+    margin-left: 48%;
+}
+
+.header3 .RightTop button:hover{
+    border: 1px solid white;
+    background-color: white;
+    color: #00641B;
+    transition: 0.3s;
+}
+
+.Landing .MidLeft2{
+    margin-left: 12%;
+}
+
+.Landing .MidRight2{
+    margin-right: 26%;
+}
+
+.MidLeft2 h1{
+    font-size: 42px;
+}
+
+.MidLeft2 .desc2{
+    font-size: 8px;
+    margin-top: -25px;
+    line-height: 12px;
+    margin-left: 3px;
+}
+
+.MidLeft2 table{
+    margin-top: 2%;
+    border:1px solid white;
+    padding: 8px 8px 8px 8px;
+    font-size: 12px;
+    width: 700px;
+    text-align: left;
+    border-radius: 16px;
+}
+
+aside{
+    position: fixed;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid white;
+    width: 410px;
+    height: 420px;
+    border-radius: 32px;
+}
+
+aside form{
+    margin-left: 5%;
+    width: 380px;
+}
+
+aside form h1{
+    font-size: 32px;
+    margin-top: 25%;
+}
+
+aside form #p1{
+    border: 1px solid transparent;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: white;
+    width: 290px;
+    margin-left: 2%;
+}
+
+aside form #p2{
+    border: 1px solid transparent;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: white;
+    width: 295px;
+    margin-left: 2%;
+}
+
+aside form #p3{
+    border: 1px solid transparent;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: white;
+    width: 265px;
+    margin-left: 2%;
+}
+
+aside form button{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 16px;
+    color: white;
+    font-size: 12px;
+    padding: 4px 4px 4px 4px;
+    width: 100px;
+    float: right;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+#Insert2 #InsFirst{
+    margin-top: 32%;
+}
+
+#Insert2 select{
+    width: 440px;
+}
+
+#cul{
+    width: 440px;
+}
+
+#InsFirst2{
+    margin-top: 25%;
+}
+
+.MidLeft3{
+    margin-left: 12%;
+}
+
+.MidLeft3 h1{
+    font-size: 48px;
+}
+
+.MidLeft3 .desc3{
+    font-size: 8px;
+    margin-top: -35px;
+    line-height: 12px;
+    margin-left: 10px;
+}
+
+.MidLeft3 .window{
+    border: 1px solid white;
+    height: 480px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 730px;
+    margin-top: 2%;
+    margin-left: 10px;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.MidLeft3 .left{
+    border: 1px solid transparent;
+    border-right: 1px solid white;
+    overflow: scroll;
+    margin-left: -16%;
+}
+
+.MidLeft3 .leftTop{
+    border: 1px solid transparent;
+    border-bottom: 1px solid white;
+    height: 50px;
+}
+
+.MidLeft3 .left .leftTop h1{
+    font-size: 14px;
+    margin-left: 15%;
+}
+
+.MidLeft3 .left .leftTop i{
+    font-size: 16px;
+    margin-right: 5%;
+}
+
+.userMessage{
+    border: 1px solid transparent;
+    border-bottom: 1px solid white;
+    height: 40px;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 30% 70%;
+}
+
+.window .left .userMessage:hover{
+    background-color: white;
+    color: #00641B;
+}
+
+.window .left .userMessage:active{
+    background-color: white;
+    color: #00641B;
+}
+
+.window .left .userMessage .leftMid{
+    height: 40px;
+}
+
+.window .left .userMessage .leftMid i{
+    font-size: 30px;
+    margin-left: 35%;
+    margin-top: 10%;
+}
+
+.window .left .userMessage .rightMid{
+    height: 40px;
+    overflow: scroll;
+}
+
+.window .left .userMessage .rightMid h3{
+    font-size: 14px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.window .right{
+    width: 500px;
+    margin-top: -0%;
+    border-radius: 0px;
+    height: 480px;
+    border: 1px solid transparent;
+    overflow: hidden;
+} 
+
+.window .right .rightTop{
+    border-bottom: 1px solid white;
+    overflow: hidden;
+    height: 51px;
+    display: grid;
+    grid-template-columns: 8% 92%;
+    width: 620px;
+    position: relative; 
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.169);
+    backdrop-filter: blur(12px) brightness(0.8);
+}
+
+.window .right .rightTop .leftMid i{
+    font-size: 30px;
+    margin-left: 20%;
+    margin-top: 20%;
+}
+
+.window .right .rightTop .rightMid h3{
+    margin-left: 0%;
+    margin-top: 2.5%;
+}
+
+.conv{
+    height: 315px;
+    overflow: scroll; 
+    padding: 10px;
+    width: 620px;
+    box-sizing: border-box;
+}
+
+.window .right .windowBottom{
+    height: 50px;
+    border: 1px solid transparent;
+    border-top: 1px solid white;
+    margin-top: -21%;
+    width: 580px;
+    border-bottom-right-radius: 32px;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.169);
+    backdrop-filter: blur(12px) brightness(0.8);
+}
+
+.window .right .windowBottom input{
+    margin-left: 1%;
+    border: 1px solid white;
+    background-color: transparent;
+    overflow: scroll;
+    color: white;
+    border-radius: 32px;
+    padding: 4px 2px 4px 8px;
+    width: 520px;
+    margin-top: 2%;
+    margin-left: 1%;
+}
+
+.window .right .windowBottom input:hover{
+    border: 1px solid white;
+    background-color: white;
+    color: #00641B;
+}
+
+.window .right .windowBottom input:active{
+    border: 1px solid white;
+    background-color: white;
+    color: #00641B;
+}
+
+.window .right .windowBottom button{
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 4px 4px 4px 4px;
+    margin-left: 1.5%;
+    border-radius: 100%;
+    width: 27px;
+    overflow: hidden;
+    color: white;
+}
+
+.window .right .windowBottom button i{
+    margin-left: -15%;
+}
+
+.window .right .windowBottom button:hover{
+    border: 1px solid white;
+    background-color: white;
+    color: #00641B;
+}
+
+.conv .message:nth-child(1){
+    margin-top: 2%;
+}
+
+.message {
+    border-radius: 32px;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 8px;
+    overflow: scroll;
+    width: 540px;
+}
+
+.sent {
+    background-color: #34C759;
+    color: #fff;
+}
+
+.received {
+    background-color: #e4e4e4;
+    color: #333;
+}
+
+.message-text {
+    margin: 0;
+    font-size: 8px;
+}
+
+.message-time {
+    font-size: 4px;
+    color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 5px;
+    right: 8px;
+}
+
+.sent .message-time{
+    color: white;
+}
