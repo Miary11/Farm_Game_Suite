@@ -65,7 +65,7 @@ const InsertSimulation = () => {
         };
 
         fetchData();
-    }, []);
+    }, [parcelleValue]);
 
     // console.log('User Data:', userData);
     // console.log('Culture Data:', cultureData);
