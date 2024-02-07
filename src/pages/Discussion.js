@@ -60,10 +60,10 @@ const Discussion = () => {
       }
     };
 
-    if (selectedUser) {
+    if (selectedUser && userData) {
       fetchMessages();
     }
-  }, [selectedUser]);
+  }, [selectedUser, userData]);
 
   const handleUserClick = (user) => {
     setSelectedUser(user);
